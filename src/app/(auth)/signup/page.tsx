@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import {  useEffect, useState } from "react";
 import  {useDebounceCallback} from "usehooks-ts";
 import { toast } from "@/components/ui/use-toast";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { signUpSchema } from "@/schemas/signUpSchema";
 import axios from "axios";
 import { ApiResponse } from "@/Types/ApiResponse";
@@ -37,7 +37,8 @@ const Page = () => {
       email: "",
       password: ""
     }
-  });-
+  });
+  const router = useRouter();
   useEffect(()=>{
     async function checkUsername(){
       if(username){
@@ -74,7 +75,7 @@ const Page = () => {
             description: response.data.message
           })
       
-          // router.push('/auth/sign-in');
+          router.push('/sign-in');
         }
         
       } catch (error:any) {

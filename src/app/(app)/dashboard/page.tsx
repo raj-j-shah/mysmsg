@@ -21,9 +21,11 @@ export default function Page()  {
   const [isSwitchLoading,setIsSwitchLoading] = useState(false);
   const {toast} = useToast();
   const handleDeleteMessage = async (messageId:string) => {
-    setMessages(messages.filter((message)=>{
-         message._id != messageId;
-    }))
+    const nmsg = messages.filter((m)=>{
+      return m._id !== messageId;
+    })
+    setMessages(nmsg);
+
   }
   const {data:session} = useSession();
   const form = useForm({
@@ -157,7 +159,7 @@ export default function Page()  {
         </Button>
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
           {messages.length > 0 ? (
-            messages.map((message, index) => (
+            messages.map((message) => (
               <MessageCard
                 key={String(message._id)}
                 message={message}

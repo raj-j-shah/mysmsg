@@ -68,7 +68,7 @@ const Page = () => {
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
           Join Mystery Message 
           </h1>
-      <p className="mb-4">Sign up to start your anonymous adventure </p>
+      <p className="mb-4">Sign in to start your anonymous adventure </p>
     </div>
     <Form {...form}>
      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

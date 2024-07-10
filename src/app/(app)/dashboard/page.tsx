@@ -88,7 +88,7 @@ export default function Page()  {
         title:"Success",
         description:`Messages are now ${acceptMessages ? "disabled" : "enabled"}`,
       })
-    } catch (error) {
+    } catch (error:any) {
       toast({
         title:"Error",
         description:error.message,

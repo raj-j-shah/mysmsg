@@ -23,9 +23,15 @@ function Navbar() {
               Welcome, {user.username || user.email}
             </span>
 
-            <Button onClick={() => signOut()} className="w-full md:w-auto bg-slate-100 text-black" variant='outline'>
+            
+            <div className="flex gap-4">
+  <Link href="/dashboard">
+    <Button className="w-full md:w-auto bg-slate-100 text-black" variant={'outline'}>Dashboard</Button>
+  </Link>
+  <Button onClick={() => signOut()} className="w-full md:w-auto bg-slate-100 text-black" variant='outline'>
               Logout
-            </Button>
+  </Button>
+</div>
           </>
         ) : (
           <div className="flex gap-4">
